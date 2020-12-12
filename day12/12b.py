@@ -10,7 +10,7 @@ def make_deg_between_0_360(deg):
     return deg
 
 
-def run(lines):
+def pilot_boat(lines):
     facing_to_deg = {"N": 0, "E": 90, "S": 180, "W": 270}
 
     manhattan = {90: 0, 270: 0, 0: 0, 180: 0}
@@ -45,7 +45,7 @@ def main():
     with open("12.txt") as input:
         lines = input.readlines()
         lines = reduce(lambda acc, el: [*acc, el.rstrip("\n")], lines, [])
-        print(run(lines))
+        print(pilot_boat(lines))
     return 0
 
 
