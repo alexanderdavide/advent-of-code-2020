@@ -1,5 +1,3 @@
-from itertools import product
-from functools import reduce
 import re
 
 
@@ -29,8 +27,6 @@ def run(numbers):
 def main():
     with open("15.txt") as input:
         numbers = [int(i) for i in input.readline().strip().split(",")]
-        print(numbers)
-
         print(run(numbers))
 
     return 0
