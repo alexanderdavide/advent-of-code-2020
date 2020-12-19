@@ -3,6 +3,10 @@ from operator import mul
 from functools import reduce
 
 
+INNER_PAR = re.compile("(\([\d\s\+\*]+\))")
+PLUS_OP = re.compile("(\d+\s*\+\s*\d+)")
+
+
 def calc(expression):
     plus_ops = PLUS_OP.findall(expression)
     while plus_ops:
@@ -13,10 +17,6 @@ def calc(expression):
         plus_ops = PLUS_OP.findall(expression)
     numbers = [int(i) for i in re.findall("\d+", expression)]
     return reduce(mul, numbers)
-
-
-INNER_PAR = re.compile("(\([\d\s\+\*]+\))")
-PLUS_OP = re.compile("(\d+\s*\+\s*\d+)")
 
 
 def run(lines):

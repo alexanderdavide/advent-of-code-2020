@@ -1,6 +1,9 @@
 import re
 
 
+INNER_PAR = re.compile("(\([\d\s\+\*]+\))")
+
+
 def calc(expression):
     numbers = [int(i) for i in re.findall("\d+", expression)]
     tasks = re.findall("[+,*]", expression)
@@ -13,9 +16,6 @@ def calc(expression):
         if curr_op == "*":
             result *= curr_numb
     return result
-
-
-INNER_PAR = re.compile("(\([\d\s\+\*]+\))")
 
 
 def run(lines):
